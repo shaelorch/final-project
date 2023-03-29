@@ -81,18 +81,7 @@ const Post: React.FC<PostProps> = (props) => {
         button + button {
           margin-left: 1rem;
         }
-       
       `}</style>
-       {
-          !props.published && userHasValidSession && postBelongsToUser && (
-            <button onClick={() => publishPost(props.id)}>Publish</button>
-          )
-        }
-        {
-          userHasValidSession && postBelongsToUser && (
-            <button onClick={() => deletePost(props.id)}>Delete</button>
-          )
-        }
     </Layout>
   );
 };
