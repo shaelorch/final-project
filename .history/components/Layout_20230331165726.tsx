@@ -1,0 +1,68 @@
+import React, { ReactNode } from "react";
+import Header from "./Header";
+import { FaTumblr } from "react-icons/fa";
+
+type Props = {
+  children: ReactNode;
+};
+
+const Layout: React.FC<Props> = (props) => (
+  <div>
+    
+    <Header />
+    <div className="layout">{props.children}</div>
+    <style jsx global>{`
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+        
+      }
+
+     .tumblr {
+      margin-top:20px;
+     }
+
+      body {
+        
+        padding:5%;
+        font-size: 16px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        background:black;
+        justify-content:center;
+        color:white;
+        width:100%;
+      }
+
+      input,
+      textarea {
+        font-size: 16px;
+        border-radius:5px;
+        
+            }
+
+      button {
+        cursor: pointer;
+        background-color:#24C73B;
+        margin:5px;
+        border-radius:5px;
+        color:white;
+        font-weight:bold;
+        
+      }
+    `}</style>
+    <style jsx>{`
+      .layout {
+       
+      }
+    `}</style>
+  </div>
+);
+
+export default Layout;
