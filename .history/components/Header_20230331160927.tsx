@@ -121,7 +121,7 @@ const Header: React.FC = () => {
     left = (
       <div className="left">
         <div className='logo'>
-          <FaTumblr className="tumblr" color='white' size={30} style={{marginRight:10}}/>
+          <FaTumblr className="tumblr" color='white' size={40} />
         <Link href="/">
           <a className="bold" data-active={isActive('/')}>
             Feed
@@ -137,13 +137,14 @@ const Header: React.FC = () => {
             font-weight: bold;
           }
 
-          
+          .logo {
+            align-content:center;
+          }
 
           a {
             text-decoration: none;
             color: var(--geist-foreground);
             display: inline-block;
-          
           }
 
           .left a[data-active='true'] {
@@ -164,13 +165,10 @@ const Header: React.FC = () => {
     right = (
       <div className="right">
         <div className='rightbuttons'>
-        <img className="avatar" src={session.user.image} />
          <p className='username'>
           {session.user.name} ({session.user.email})
         </p>
-        
-        <div style={{display:'flex', flexDirection:'row'}}>
-          <Link href="/create">
+        <Link href="/create">
           <button>
             <a>New post</a>
           </button>
@@ -178,8 +176,6 @@ const Header: React.FC = () => {
         <button className="logout" onClick={() => signOut()}>
           <a>Log out</a>
         </button> 
-        </div>
-        
         
         </div>
         
@@ -192,8 +188,9 @@ const Header: React.FC = () => {
 
           .rightbuttons {
             display:flex;
-           flex-direction:column;
-                      }
+           
+            
+          }
 
           p {
             display: inline-block;
@@ -203,20 +200,18 @@ const Header: React.FC = () => {
 
           .username {
             color:#22AFFB;
-            text-align:center;
-            font-size:11px;
           }
 
           a + a {
             margin-left: 1rem;
           }
 
-          .avatar {
-            width:30px;
-            height:30px;
-            border-radius:20px;
-            margin-left:75%;
+          .right {
+           
+    
+
           }
+
           .right a {
             border: 1px solid var(--geist-foreground);
             padding: 0.5rem 1rem;
@@ -230,12 +225,7 @@ const Header: React.FC = () => {
 
           button {
             border: none;
-            width:78px;
-            padding:0px;
-            
-            height:30px;
-            font-size:10px;
-            
+            width:110px;
           }
         `}</style>
       </div>
@@ -249,9 +239,9 @@ const Header: React.FC = () => {
       <style jsx>{`
         nav {
           display: flex;
-          padding: 2%;
+          padding: 2rem;
           align-items: center;
-          border-bottom:1px solid white;
+          
           width:100%;
           justify-content:space-between;
         }

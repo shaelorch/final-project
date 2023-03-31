@@ -164,13 +164,10 @@ const Header: React.FC = () => {
     right = (
       <div className="right">
         <div className='rightbuttons'>
-        <img className="avatar" src={session.user.image} />
          <p className='username'>
           {session.user.name} ({session.user.email})
         </p>
-        
-        <div style={{display:'flex', flexDirection:'row'}}>
-          <Link href="/create">
+        <Link href="/create">
           <button>
             <a>New post</a>
           </button>
@@ -178,8 +175,6 @@ const Header: React.FC = () => {
         <button className="logout" onClick={() => signOut()}>
           <a>Log out</a>
         </button> 
-        </div>
-        
         
         </div>
         
@@ -192,8 +187,9 @@ const Header: React.FC = () => {
 
           .rightbuttons {
             display:flex;
-           flex-direction:column;
-                      }
+           
+            
+          }
 
           p {
             display: inline-block;
@@ -203,20 +199,18 @@ const Header: React.FC = () => {
 
           .username {
             color:#22AFFB;
-            text-align:center;
-            font-size:11px;
           }
 
           a + a {
             margin-left: 1rem;
           }
 
-          .avatar {
-            width:30px;
-            height:30px;
-            border-radius:20px;
-            margin-left:75%;
+          .right {
+           
+    
+
           }
+
           .right a {
             border: 1px solid var(--geist-foreground);
             padding: 0.5rem 1rem;
@@ -230,9 +224,9 @@ const Header: React.FC = () => {
 
           button {
             border: none;
-            width:78px;
+            width:50px;
             padding:0px;
-            
+          
             height:30px;
             font-size:10px;
             

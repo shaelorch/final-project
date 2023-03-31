@@ -2,7 +2,6 @@ import React from "react";
 import Router from "next/router";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
-import { useSession } from "next-auth/react";
 
 export type PostProps = {
   id: string;
@@ -17,22 +16,15 @@ export type PostProps = {
 
 export type UserProps = {
   image: string;
+
 }
 
-// export type UserProps = {
-//   image: string;
-
-// }
-
-
-
-const Post: React.FC<{ post: PostProps}> = ({ post }) => {
+const Post: React.FC<{ post: PostProps, user: UserProps }> = ({ post, user }) => {
   const authorName = post.author ? post.author.name : "Unknown author";
-  const { data: session, status } = useSession();
-  // const userImg = user.image;
+  const userImg = 
   return (
     <div  onClick={() => Router.push("/p/[id]", `/p/${post.id}`)}>
-      
+      <Image src={user.image} width={50} height={50}/>
       <h2 >{post.title}</h2>
       <small>By {authorName}</small>
       <ReactMarkdown children={post.content} />
@@ -51,6 +43,4 @@ const Post: React.FC<{ post: PostProps}> = ({ post }) => {
   );
 };
 
-
 export default Post;
-

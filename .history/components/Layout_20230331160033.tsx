@@ -8,7 +8,7 @@ type Props = {
 
 const Layout: React.FC<Props> = (props) => (
   <div>
-    
+    <FaTumblr className="tumblr" color='white' size={50} />
     <Header />
     <div className="layout">{props.children}</div>
     <style jsx global>{`
@@ -28,13 +28,14 @@ const Layout: React.FC<Props> = (props) => (
      }
 
       body {
-        
-        padding:5%;
+        margin: 3rem;
+        padding: 0;
         font-size: 16px;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
           "Segoe UI Symbol";
         background:black;
+       
         justify-content:center;
         color:white;
         width:100%;
@@ -44,8 +45,7 @@ const Layout: React.FC<Props> = (props) => (
       textarea {
         font-size: 16px;
         border-radius:5px;
-        
-            }
+      }
 
       button {
         cursor: pointer;
@@ -54,12 +54,12 @@ const Layout: React.FC<Props> = (props) => (
         border-radius:5px;
         color:white;
         font-weight:bold;
-        
+
       }
     `}</style>
     <style jsx>{`
       .layout {
-       
+        padding: 0 2rem;
       }
     `}</style>
   </div>

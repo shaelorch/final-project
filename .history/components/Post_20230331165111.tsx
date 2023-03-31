@@ -32,7 +32,7 @@ const Post: React.FC<{ post: PostProps}> = ({ post }) => {
   // const userImg = user.image;
   return (
     <div  onClick={() => Router.push("/p/[id]", `/p/${post.id}`)}>
-      
+      <img className="avatar" src={session.user.image} />
       <h2 >{post.title}</h2>
       <small>By {authorName}</small>
       <ReactMarkdown children={post.content} />

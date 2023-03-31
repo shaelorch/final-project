@@ -164,11 +164,11 @@ const Header: React.FC = () => {
     right = (
       <div className="right">
         <div className='rightbuttons'>
-        <img className="avatar" src={session.user.image} />
+
          <p className='username'>
           {session.user.name} ({session.user.email})
         </p>
-        
+        <img className="avatar" src={session.user.image} />
         <div style={{display:'flex', flexDirection:'row'}}>
           <Link href="/create">
           <button>
@@ -193,7 +193,8 @@ const Header: React.FC = () => {
           .rightbuttons {
             display:flex;
            flex-direction:column;
-                      }
+            
+          }
 
           p {
             display: inline-block;
@@ -213,9 +214,6 @@ const Header: React.FC = () => {
 
           .avatar {
             width:30px;
-            height:30px;
-            border-radius:20px;
-            margin-left:75%;
           }
           .right a {
             border: 1px solid var(--geist-foreground);

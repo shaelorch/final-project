@@ -44,7 +44,7 @@ const Layout: React.FC<Props> = (props) => (
       textarea {
         font-size: 16px;
         border-radius:5px;
-        
+        w
             }
 
       button {
@@ -54,12 +54,12 @@ const Layout: React.FC<Props> = (props) => (
         border-radius:5px;
         color:white;
         font-weight:bold;
-        
+
       }
     `}</style>
     <style jsx>{`
       .layout {
-       
+        padding:10;
       }
     `}</style>
   </div>

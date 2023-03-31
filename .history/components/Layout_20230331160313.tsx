@@ -8,7 +8,7 @@ type Props = {
 
 const Layout: React.FC<Props> = (props) => (
   <div>
-    
+    <FaTumblr className="tumblr" color='white' size={50} />
     <Header />
     <div className="layout">{props.children}</div>
     <style jsx global>{`
@@ -20,7 +20,7 @@ const Layout: React.FC<Props> = (props) => (
       *:before,
       *:after {
         box-sizing: inherit;
-        
+        justify-content:center;
       }
 
      .tumblr {
@@ -44,7 +44,7 @@ const Layout: React.FC<Props> = (props) => (
       textarea {
         font-size: 16px;
         border-radius:5px;
-        
+        w
             }
 
       button {
@@ -54,12 +54,12 @@ const Layout: React.FC<Props> = (props) => (
         border-radius:5px;
         color:white;
         font-weight:bold;
-        
+
       }
     `}</style>
     <style jsx>{`
       .layout {
-       
+        padding: 0 2rem;
       }
     `}</style>
   </div>

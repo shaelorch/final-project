@@ -95,7 +95,7 @@ const Header: React.FC = () => {
         <style jsx>{`
           a {
             text-decoration: none;
-            color: #24C73B;
+            color: green;
            display: inline-block;
           }
 
@@ -120,8 +120,6 @@ const Header: React.FC = () => {
   if (session) {
     left = (
       <div className="left">
-        <div className='logo'>
-          <FaTumblr className="tumblr" color='white' size={30} style={{marginRight:10}}/>
         <Link href="/">
           <a className="bold" data-active={isActive('/')}>
             Feed
@@ -130,29 +128,20 @@ const Header: React.FC = () => {
         <Link href="/drafts">
           <a data-active={isActive('/drafts')}>My drafts</a>
         </Link>
-        </div>
-        
         <style jsx>{`
           .bold {
             font-weight: bold;
           }
 
-          
-
           a {
             text-decoration: none;
             color: var(--geist-foreground);
             display: inline-block;
-          
           }
 
           .left a[data-active='true'] {
             color: gray;
             
-          }
-
-          .left {
-           
           }
 
           a + a {
@@ -164,23 +153,17 @@ const Header: React.FC = () => {
     right = (
       <div className="right">
         <div className='rightbuttons'>
-        <img className="avatar" src={session.user.image} />
-         <p className='username'>
+          <p className='username'>
           {session.user.name} ({session.user.email})
         </p>
-        
-        <div style={{display:'flex', flexDirection:'row'}}>
-          <Link href="/create">
+        <Link href="/create">
           <button>
             <a>New post</a>
           </button>
         </Link>
         <button className="logout" onClick={() => signOut()}>
           <a>Log out</a>
-        </button> 
-        </div>
-        
-        
+        </button>
         </div>
         
         <style jsx>{`
@@ -192,8 +175,9 @@ const Header: React.FC = () => {
 
           .rightbuttons {
             display:flex;
-           flex-direction:column;
-                      }
+            flex-direction:column;
+            
+          }
 
           p {
             display: inline-block;
@@ -203,20 +187,18 @@ const Header: React.FC = () => {
 
           .username {
             color:#22AFFB;
-            text-align:center;
-            font-size:11px;
           }
 
           a + a {
             margin-left: 1rem;
           }
 
-          .avatar {
-            width:30px;
-            height:30px;
-            border-radius:20px;
-            margin-left:75%;
+          .right {
+           
+    
+
           }
+
           .right a {
             border: 1px solid var(--geist-foreground);
             padding: 0.5rem 1rem;
@@ -230,12 +212,7 @@ const Header: React.FC = () => {
 
           button {
             border: none;
-            width:78px;
-            padding:0px;
-            
-            height:30px;
-            font-size:10px;
-            
+            width:110px;
           }
         `}</style>
       </div>
@@ -249,11 +226,9 @@ const Header: React.FC = () => {
       <style jsx>{`
         nav {
           display: flex;
-          padding: 2%;
+          padding: 2rem;
           align-items: center;
-          border-bottom:1px solid white;
           width:100%;
-          justify-content:space-between;
         }
       `}</style>
     </nav>

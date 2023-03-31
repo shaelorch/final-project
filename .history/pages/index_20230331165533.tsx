@@ -38,7 +38,7 @@ const Blog: React.FC<Props> = (props) => {
           <h1 style={{ color: 'white' }}>Public Feed</h1>
           <AiFillClockCircle size={35} style={{marginLeft:20}}/>
         </div>
-      
+
         <main>
           {props.feed.map((post) => (
             <div key={post.id} className="post">

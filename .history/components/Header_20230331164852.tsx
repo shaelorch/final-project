@@ -215,7 +215,7 @@ const Header: React.FC = () => {
             width:30px;
             height:30px;
             border-radius:20px;
-            margin-left:75%;
+            justify-content:right;
           }
           .right a {
             border: 1px solid var(--geist-foreground);

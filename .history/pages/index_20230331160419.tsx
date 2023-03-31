@@ -5,8 +5,7 @@ import Post, { PostProps } from "../components/Post"
 import prisma from '../lib/prisma';
 import { AiFillClockCircle } from "react-icons/ai"
 import { FaTumblr } from "react-icons/fa";
-import Avatar from "../components/Avatar";
-import { useSession } from "next-auth/react";
+
 
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -29,7 +28,6 @@ type Props = {
 }
 
 const Blog: React.FC<Props> = (props) => {
-  
   return (
   
   <><Layout>
@@ -38,7 +36,7 @@ const Blog: React.FC<Props> = (props) => {
           <h1 style={{ color: 'white' }}>Public Feed</h1>
           <AiFillClockCircle size={35} style={{marginLeft:20}}/>
         </div>
-      
+
         <main>
           {props.feed.map((post) => (
             <div key={post.id} className="post">
@@ -53,14 +51,12 @@ const Blog: React.FC<Props> = (props) => {
           transition: box-shadow 0.1s ease-in;
           border-radius:5px;
           color:white;
-          width:100%;
-          
+          width:80%;
         }
         .feed{
           display:flex;
           align-items:center;
           margin-bottom:10px;
-          justify-content:center;
         }
 
         .post:hover {
@@ -70,8 +66,6 @@ const Blog: React.FC<Props> = (props) => {
         .post + .post {
           margin-top: 2rem;
         }
-
-      
 
         
       `}</style>

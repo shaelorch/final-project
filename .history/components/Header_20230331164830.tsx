@@ -193,7 +193,8 @@ const Header: React.FC = () => {
           .rightbuttons {
             display:flex;
            flex-direction:column;
-                      }
+            align-items:right;
+          }
 
           p {
             display: inline-block;
@@ -215,7 +216,6 @@ const Header: React.FC = () => {
             width:30px;
             height:30px;
             border-radius:20px;
-            margin-left:75%;
           }
           .right a {
             border: 1px solid var(--geist-foreground);

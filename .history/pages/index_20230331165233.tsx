@@ -5,7 +5,6 @@ import Post, { PostProps } from "../components/Post"
 import prisma from '../lib/prisma';
 import { AiFillClockCircle } from "react-icons/ai"
 import { FaTumblr } from "react-icons/fa";
-import Avatar from "../components/Avatar";
 import { useSession } from "next-auth/react";
 
 
@@ -29,7 +28,7 @@ type Props = {
 }
 
 const Blog: React.FC<Props> = (props) => {
-  
+  const { data: session, status } = useSession();
   return (
   
   <><Layout>
@@ -38,8 +37,9 @@ const Blog: React.FC<Props> = (props) => {
           <h1 style={{ color: 'white' }}>Public Feed</h1>
           <AiFillClockCircle size={35} style={{marginLeft:20}}/>
         </div>
-      
+
         <main>
+        <img className="avatar" src={session.user.image} />
           {props.feed.map((post) => (
             <div key={post.id} className="post">
               <Post post={post} />
